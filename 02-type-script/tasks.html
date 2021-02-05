@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Tasks (TypeScript)</title>
+    <script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+<div id="app">
+    <div class="main">
+        <h1>My Tasks</h1>
+        <div>
+            <label for="newTask">What I need to do?</label>
+            <input ref="newTask" id="newTask" type="text" placeholder="What I need to do?" v-model="newTask" @keyup.enter="addTask()">
+            <button type="button" @click="addTask()">Add Task</button>
+        </div>
+        <ul>
+            <li v-for="(task, index) in tasks" :key="index">
+                <label>
+                    <input type="checkbox" v-model="task.status">
+                    {{ task.description }}
+                    <button type="button" @click="deleteTask(index)" v-if="task.status">Delete</button>
+                </label>
+            </li>
+        </ul>
+        <div>{{ tasksMessage }}</div>
+    </div>
+</div>
+
+<script src="tasks.js"></script>
+</body>
+</html>
