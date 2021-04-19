@@ -1,7 +1,8 @@
 <template>
     <div class="container">
         <div>
-            <Logo/>
+            <Logo title="Hello World"/>
+
             <h1 class="title">
                 My Tasks
             </h1>
@@ -29,7 +30,6 @@
 <script lang="ts">
 import Vue from 'vue'
 import Task from "~/models/Task";
-
 export default Vue.extend({
     data() {
         return {

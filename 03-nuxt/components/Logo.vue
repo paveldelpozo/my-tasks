@@ -13,7 +13,17 @@
       fill="#2F495E"
     />
   </svg>
+    <h3>{{ title }}</h3>
 </template>
+
+<script lang="ts">
+    import Vue from 'vue'
+    export default Vue.extend({
+        props : {
+            title : String
+        }
+    });
+</script>
 
 <style>
 .NuxtLogo {
